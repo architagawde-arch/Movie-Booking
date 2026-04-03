@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Booking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2 id="title">Movie Ticket Booking</h2>
+
+    <form id="form" action="/book" method="POST">
+
+        <label>Name:</label>
+        <input type="text" id="name" name="name" onkeyup="checkName()" required>
+        <span id="nameError"></span>
+
+        <label>Email:</label>
+        <input type="email" id="email" name="email" onkeyup="validateEmail()" required>
+        <span id="emailError"></span>
+
+        <label>Movie:</label>
+        <select id="movie" name="movie" onchange="calculateTotal()" required>
+            <option value="">Select</option>
+            <option value="150">Avengers (₹150)</option>
+            <option value="200">Avatar (₹200)</option>
+            <option value="250">Batman (₹250)</option>
+        </select>
+
+        <label>Tickets:</label>
+        <input type="number" id="tickets" name="tickets" min="1" oninput="calculateTotal()" required>
+
+        <label>Total Price:</label>
+        <input type="text" id="total" name="total" readonly>
+
+        <button type="submit">Book</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
